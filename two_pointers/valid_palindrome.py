@@ -10,12 +10,16 @@ WHAT I GOT RIGHT:
 MISTAKES:
 - Didn't read full problem: missed alphanumeric filter requirement
   Rule: Read constraints before writing logic — they ARE the problem
+- : constraints define the input space, and the input space defines what your pointers can encounter
 
 THE ONE RULE:
 Read the full problem statement first. Always.
 
 PATTERN FINGERPRINT:
 Two pointers + skip non-valid chars + compare inward
+
+LEARNING:
+    I jumped to solution space before fully mapping the constraint space — I need a 60-second constraint checklist habit before touching code
 """
 
 class Solution:
@@ -25,13 +29,13 @@ class Solution:
         j = len(s) - 1
 
         while i < j:
-            if not s[i].isalnum():
+            while i < j and not s[i].isalnum():
                 i += 1
 
-            elif not s[j].isalnum():
+            while i < j and not s[j].isalnum():
                 j -= 1
 
-            elif s[i].lower() != s[j].lower():
+            if s[i].lower() != s[j].lower():
                 return False
             else:
                 i += 1

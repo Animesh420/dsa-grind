@@ -19,6 +19,9 @@ with no extra space. Sorting an already-sorted array to "be safe" breaks index g
 
 PATTERN FINGERPRINT:
 Pre-sorted + two pointers inward + adjust based on sum vs target
+
+LEARNING:
+    -  always extract and list every constraint before touching the solution space.
 """
 
 class Solution:
